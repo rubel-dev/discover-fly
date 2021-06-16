@@ -95,11 +95,31 @@ nav ul li a:hover, a.active{
     grid-template-columns: 1fr 1fr;
     gap: 10px;
 }
-.booking-content{
+#booking-content{
     color: #fff;
     width: 80%;
 }
-.booking-content h1{
+#booking-congrats{  
+    display:none;
+   width:300px;
+   height:300px;
+   text-align: center;
+   background:rgb(231, 222, 222);
+   color:black;
+   padding:60px 30px;
+   border-radius: 5px;
+}
+#booking-congrats button{
+    background:teal;
+    color: white;
+    border: none;
+    padding:5px 7px;
+}
+#booking-congrats h4{
+    color: tomato;
+    font-size: 20px;
+}
+#booking-content h1{
     font-size: 70px;
     text-transform: uppercase;
     font-family: 'Bebas Neue', cursive;

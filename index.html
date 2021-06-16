@@ -95,12 +95,15 @@
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <button onclick='handleBooking()' class="btn-style">Book Now</button>
         </div>
 
-        <div class="booking-content">
+        <div id="booking-content">
             <h1>discover <br> around the world</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicingelit. Provident voluptatibus quam fuga laborumalias veniam libero autem quasi maxime ullam vero nama imi dolor, architecto ab facilis eaque deserunt nobise voluptatibus quam</p>
+        </div>
+        <div id="booking-congrats">
+
         </div>
     </section>
 
@@ -108,7 +111,7 @@
 
     <!--js start-->
 
-    <script> 
+    <script>  
         function handleTicketCount(ticket,isIncreasing){
             const ticketInput = document.getElementById(ticket+'-input');
             const ticketInputValue = ticketInput.value;
@@ -135,8 +138,7 @@
             const tax = total * 0.1;
             document.getElementById('tax').innerText =`$${tax}`; 
             const grandTotal = total + tax;
-            document.getElementById('grandTotal').innerText = `$${grandTotal}`;
-
+            document.getElementById('grandTotal').innerText = `$${grandTotal}`; 
         }
 
         function getInput(ticket){
@@ -144,6 +146,26 @@
             const ticketCount = parseInt(ticketInput);
             return ticketCount;
         }
+
+        //handel booking
+
+       function handleBooking(){
+            document.getElementById('booking-content').style.display='none'
+            document.getElementById('booking-congrats').innerHTML = `
+                                                            <h4>Congrats!</h4><br>
+                                                            <p>You have successfully done your booking </p><br>  
+                                                            <button id='btn'>Ok</button>
+                                                        `
+             document.getElementById('booking-congrats').style.display = 'block';
+
+             document.getElementById('btn').addEventListener('click',function(){ 
+                document.getElementById('booking-congrats').style.display = 'none';
+                document.getElementById('booking-content').style.display='block';
+             })
+             }
+            
+            
+
     </script>
 </body>
 
